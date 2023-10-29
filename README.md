@@ -8,6 +8,7 @@ save specific points of interest, and view a history of saved locations. Whether
 or just need to remember specific locations, this app makes it easy to keep track of where you've been. 
 The integration with Firebase ensures that your location data is stored securely and can be accessed anytime.
 
+NOTE - This app is tested only on android
 
 Installation
 A step by step series of examples that tell you how to get a development environment running.
