@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Kartta-appi",
-    "slug": "Kartta-appi",
+    "name": "Paikannin-app",
+    "slug": "Paikannin-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
