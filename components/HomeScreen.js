@@ -50,16 +50,22 @@ const HomeScreen = ({ navigation }) => {
     );
   };
 
+  const openLocation = (location) => {
+    navigation.navigate('LocationMap', { location });
+  };
+
   const renderItem = ({ item }) => (
-    <View style={styles.locationContainer}>
-      <Text>Kuvaus: {item.description}</Text>
-      <Text>Lat: {item.latitude}</Text>
-      <Text>Lon: {item.longitude}</Text>
-      <Text>Aika: {item.timestamp}</Text>
-      <TouchableOpacity onPress={() => deleteLocation(item.id)} style={styles.deleteButton}>
-        <Text style={styles.deleteButtonText}>Poista</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity onPress={() => openLocation(item)}>
+      <View style={styles.locationContainer}>
+        <Text>Kuvaus: {item.description}</Text>
+        <Text>Lat: {item.latitude}</Text>
+        <Text>Lon: {item.longitude}</Text>
+        <Text>Aika: {item.timestamp}</Text>
+        <TouchableOpacity onPress={(e) => {e.stopPropagation(); deleteLocation(item.id);}} style={styles.deleteButton}>
+          <Text style={styles.deleteButtonText}>Poista</Text>
+        </TouchableOpacity>
+      </View>
+    </TouchableOpacity>
   );
 
   return (
@@ -103,7 +109,7 @@ const styles = StyleSheet.create({
   },
   deleteButton: {
     backgroundColor: 'red',
-    padding: 10,
+    padding: 1,
     borderRadius: 5,
     marginTop: 10,
   },

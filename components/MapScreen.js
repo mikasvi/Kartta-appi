@@ -44,7 +44,6 @@ const MapScreen = ({ route, navigation }) => {
         </MapView>
       ) : null}
       <Button title="Tallenna sijaintini" onPress={() => setModalVisible(true)} />
-      <Button title="Palaa takaisin" onPress={() => navigation.goBack()} />
       <Modal
         animationType="slide"
         transparent={true}
@@ -78,8 +77,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   map: {
-    width: '100%',
-    height: '80%',
+    flex: 1,
   },
   input: {
     height: 40,
